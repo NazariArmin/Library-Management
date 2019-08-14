@@ -1,0 +1,21 @@
+{% extends "main/header.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col s12, m8, l8">
+            <h3>{{user.first_name}} {{ user.last_name }}</h3>
+            <p>Username : {{ user.username }}</p>
+            <p>Email : {{user.email}}</p>
+            <p>Location : {{user.profile.location}}</p>
+            <p>Phone number : {{user.profile.phone_number}}</p>
+            <br>
+            {% if order %}
+                <h5> Order </h5>
+                <p>Book name : {{order.book}}</p>
+                <p>Order date : {{order.order_date}}</p>
+                <button><a href="{% url 'main:giveBack' order.pk %}">give back</a></button>
+            {% else %}
+                <p style="font-size: 150%">You have no book</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
