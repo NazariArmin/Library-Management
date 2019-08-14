@@ -1,9 +1,11 @@
 # Library-Management
 a jango app that Managing a library for give book to its users 
 
-##Setup
 
-###Install python and pip
+
+## Setup
+
+### Install python and pip
 
 install python in ubunut:
 ```bash
@@ -23,7 +25,8 @@ Install pip in ubuntu:
   sudo apt-get install -y python3-pip
 ```
 
-###Install Vertualenv
+
+### Install Vertualenv
 
 virtualenv is a virtual environment where you can install software and Python packages in a contained development space.
 
@@ -32,7 +35,8 @@ Install virtualenv in ubuntu:
   pip3 install virtualenv
 ```
 
-###Install django
+
+### Install django
 
 frist you should create a virtualenv
 
