@@ -1,5 +1,5 @@
 # Library-Management
-a jango app that Managing a library for give book to its users 
+a jango app that Managing a library for give book to users 
 
 
 
