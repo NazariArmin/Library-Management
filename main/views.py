@@ -5,6 +5,7 @@ from .forms import NewForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from django.views import generic
 # Create your views here.
 
 
@@ -12,14 +13,31 @@ def home(request):
     return redirect("main:categories")
 
 
-def categories(request):
-    if not request.user.is_authenticated:
-        messages.info(request, "login first")
-        return redirect("main:login")
-    our_categories = Category.objects.all()
-    return render(request=request,
-                  template_name="main/home.html",
-                  context={'categories': our_categories})
+class HomePage(generic.ListView):
+    model = Category
+    template_name = "main/home.html"
+    context_object_name = "categories"
+
+
+# def categories(request):
+#     if not request.user.is_authenticated:
+#         messages.info(request, "login first")
+#         return redirect("main:login")
+#     our_categories = Category.objects.all()
+#     return render(request=request,
+#                   template_name="main/home.html",
+#                   context={'categories': our_categories})
+
+
+class SearchResult(generic.ListView):
+    model = Book
+    template_name = "main/books.html"
+    context_object_name = "books"
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        book_list = Book.objects.filter(book_name__contains=query)
+        return book_list
 
 
 def books(request, pk):

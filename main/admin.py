@@ -7,6 +7,7 @@ from .models import Book, Category, Profile, Order
 class ProfileInLine(admin.TabularInline):
     model = Profile
 
+
 class CustomUserAdmin(UserAdmin):
     inlines = (ProfileInLine,)
 
