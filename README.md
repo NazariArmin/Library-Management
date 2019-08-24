@@ -1,5 +1,5 @@
 # Library-Management
-a jango app that Managing a library for give book to users 
+a django app that Managing a library for give book to users 
 
 
 
@@ -50,19 +50,19 @@ now activate that virtual environment:
   source test/bin/activate
 ```
 
-you can see that `test` add befor your device name and username like this:
+you can see that `test` added befor your device name and username like this:
 ```bash
-  (ENV) username@my-devicename:~$
+  (test) username@my-devicename:~$
 ```
 
 now install django by following cammand:
 ```bash
-  (ENV) username@my-devicename:~$ pip install django
+  (test) username@my-devicename:~$ pip install django
 ```
 
 and you can see version of your django:
 ```bash
-  (ENV) username@my-devicename:~$ django-admin --version
+  (test) username@my-devicename:~$ django-admin --version
 ```
 
 
